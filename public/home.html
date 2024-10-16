@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edupress</title>
+    <link href="./output.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+        --root {
+            --theme: rgb(255, 120, 45);
+        }
+
+        * {
+            font-family: "Poppins", sans-serif;
+            font-style: normal;
+        }
+
+        .header {
+            background-image: url("/assets/banner.PNG");
+        }
+
+        .group:hover .mega-menu {
+            display: block;
+        }
+
+        .mega-menu {
+            display: none;
+        }
+
+        .notice-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(254,222,38);
+            
+            padding: 10px;
+            position: relative;
+            width: 100%;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col">
+    <!-- Notice Bar -->
+    <div id="notice-bar" class="notice-bar">
+    <span>Note: This is a Sample Page Just for Showcasing Reult Feature By Adarsh Sinha Kindly go on Result tab for that</span>
+        <button id="close-notice" class="close-btn">✖</button>
+    </div>
+    <!-- Navbar -->
+    <nav class="Navbar bg-white shadow-lg">
+        <div class="navbar-container flex justify-between p-4 items-center">
+            <span><img class="h-6" src="./assets/logo.PNG" alt="Logo"></span>
+            <ul class="hidden md:flex gap-7 items-center">
+                <li class="hover:text-[rgb(255,120,45)] hover:font-bold"><a href="#">Home</a></li>
+                <li class="hover:text-[rgb(255,120,45)] hover:font-bold"><a href="./courses.html">Courses</a></li>
+                <li class="hover:text-[rgb(255,120,45)] hover:font-bold"><a href="./results.html">Results</a></li>
+                <li class="hover:text-[rgb(255,120,45)] hover:font-bold"><a href="#">Faculty</a></li>
+                <li class="hover:text-[rgb(255,120,45)] hover:font-bold"><a href="#">About</a></li>
+                <li class="hover:text-[rgb(255,120,45)] hover:font-bold">
+                    <button
+                        class="bg-[rgb(255,120,45)] p-3 rounded-[5px] text-white font-bold hover:bg-[rgb(247,131,68)]">
+                        <a href="#">Contact Us</a>
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg p-4">
+            <ul class="flex flex-col gap-4">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Results</a></li>
+                <li><a href="#">Faculty</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Header -->
+    <header
+        class="header h-[80vh] w-full bg-cover bg-center flex flex-col justify-center items-center px-4 text-center md:text-left md:flex-row md:items-center md:px-12 lg:px-24"
+        style="background-image: url('/assets/banner.PNG');">
+        <div class="text-box mr-[25rem] w-full md:w-1/2  flex flex-col gap-4 mx-auto md:ml-0  ">
+            <!-- Added items-center here -->
+            <h1 class="text-2xl md:text-4xl font-bold ">
+                Build Skills with Online Course
+            </h1>
+            <p class="text-sm md:text-lg">We denounce with righteous indignation and dislike men who are so beguiled and
+                demoralized that cannot trouble.</p>
+            <div class="btn-post-comment md:flex md:items-center">
+                <button
+                    class="post-comment bg-[rgb(255,120,45)] w-1/2 md:w-[10rem] p-3 rounded-2xl text-white font-bold hover:bg-[rgb(247,131,68)] ">
+                    Post Comment
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Categories Section -->
+    <section class="py-16">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-6">Top Categories</h2>
+            <p class="text-center text-gray-500 mb-10">Explore our Popular Categories</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Category Box -->
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transition transform hover:scale-105">
+                    <div class="w-12 h-12 mx-auto mb-4">
+                        <img src="./assets/art.svg" alt="Art & Design">
+                    </div>
+                    <h3 class="text-lg font-semibold">Art & Design</h3>
+                    <p class="text-gray-500">38 Courses</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transition transform hover:scale-105">
+                    <div class="w-12 h-12 mx-auto mb-4">
+                        <img src="./assets/development.svg" alt="Development">
+                    </div>
+                    <h3 class="text-lg font-semibold">Development</h3>
+                    <p class="text-gray-500">38 Courses</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transition transform hover:scale-105">
+                    <div class="w-12 h-12 mx-auto mb-4">
+                        <img src="./assets/communication.svg" alt="Communication">
+                    </div>
+                    <h3 class="text-lg font-semibold">Communication</h3>
+                    <p class="text-gray-500">38 Courses</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transition transform hover:scale-105">
+                    <div class="w-12 h-12 mx-auto mb-4">
+                        <img src="./assets/photography.svg" alt="Photography">
+                    </div>
+                    <h3 class="text-lg font-semibold">Photography</h3>
+                    <p class="text-gray-500">38 Courses</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transition transform hover:scale-105">
+                    <div class="w-12 h-12 mx-auto mb-4">
+                        <img src="./assets/videography.svg" alt="Photography">
+                    </div>
+                    <h3 class="text-lg font-semibold">Videography</h3>
+                    <p class="text-gray-500">38 Courses</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transition transform hover:scale-105">
+                    <div class="w-12 h-12 mx-auto mb-4">
+                        <img src="./assets/maketing.svg" alt="Photography">
+                    </div>
+                    <h3 class="text-lg font-semibold">Marketing</h3>
+                    <p class="text-gray-500">38 Courses</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transition transform hover:scale-105">
+                    <div class="w-12 h-12 mx-auto mb-4">
+                        <img src="./assets/finance.svg" alt="Photography">
+                    </div>
+                    <h3 class="text-lg font-semibold">Finance</h3>
+                    <p class="text-gray-500">38 Courses</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transition transform hover:scale-105">
+                    <div class="w-12 h-12 mx-auto mb-4">
+                        <img src="./assets/science.svg" alt="Photography">
+                    </div>
+                    <h3 class="text-lg font-semibold">Science</h3>
+                    <p class="text-gray-500">38 Courses</p>
+                </div>
+            </div>
+
+            <!-- All Categories Button -->
+            <div class="text-center mt-10">
+                <button
+                    class="bg-gray-100 px-6 py-2 rounded-full text-gray-700 font-semibold shadow-md hover:bg-gray-200">
+                    All Categories
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="top-section flex justify-between items-center ">
+            <div class="text">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Featured Courses</h2>
+                <p class="text-gray-500 mb-6">Explore our Popular Courses</p>
+            </div>
+            <button class="all-courses border border-black p-4 rounded-[1.74rem]">All Courses</button>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Course Card 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="./assets/course-card-1.PNG" alt="Course Image" class="w-full h-50 object-cover">
+                <div class="p-4">
+                    <span
+                        class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide mb-2">Photography</span>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Create An LMS Website With LearnPress</h3>
+                    <p class="text-gray-500 text-sm mb-4">By Determined-Poitras</p>
+                    <div class="text-sm text-gray-600 mb-2">2 Weeks • 156 Students</div>
+                    <div class="text-gray-800 font-bold mb-2">Free <span class="line-through text-gray-500">$29.0</span>
+                    </div>
+                    <a href="#" class="text-blue-500 hover:text-blue-600 font-semibold">View More</a>
+                </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="./assets/course-2.PNG" alt="Course Image" class="w-full h-50 object-cover">
+                <div class="p-4">
+                    <span
+                        class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide mb-2">Photography</span>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Design A Website With ThimPress</h3>
+                    <p class="text-gray-500 text-sm mb-4">By Determined-Poitras</p>
+                    <div class="text-sm text-gray-600 mb-2">2 Weeks • 156 Students</div>
+                    <div class="text-gray-800 font-bold mb-2">$49.0 <span
+                            class="line-through text-gray-500">$59.0</span></div>
+                    <a href="#" class="text-blue-500 hover:text-blue-600 font-semibold">View More</a>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="./assets/course-3.PNG" alt="Course Image" class="w-full h-50 object-cover">
+                <div class="p-4">
+                    <span
+                        class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide mb-2">Photography</span>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Create An LMS Website With LearnPress</h3>
+                    <p class="text-gray-500 text-sm mb-4">By Determined-Poitras</p>
+                    <div class="text-sm text-gray-600 mb-2">2 Weeks • 156 Students</div>
+                    <div class="text-gray-800 font-bold mb-2">Free <span class="line-through text-gray-500">$29.0</span>
+                    </div>
+                    <a href="#" class="text-blue-500 hover:text-blue-600 font-semibold">View More</a>
+                </div>
+            </div>
+
+            <!-- Course Card 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="./assets/course-4.PNG" alt="Course Image" class="w-full h-50 object-cover">
+                <div class="p-4">
+                    <span
+                        class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide mb-2">Photography</span>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Create an LMS Website with LearnPress</h3>
+                    <p class="text-gray-500 text-sm mb-4">by Determined-Poitras</p>
+                    <div class="text-sm text-gray-600 mb-2">2 Weeks • 156 Students</div>
+                    <div class="text-gray-800 font-bold mb-2">Free <span class="line-through text-gray-500">$29.0</span>
+                    </div>
+                    <a href="#" class="text-blue-500 hover:text-blue-600 font-semibold">View More</a>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="./assets/course-5.PNG" alt="Course Image" class="w-full h-50 object-cover">
+                <div class="p-4">
+                    <span
+                        class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide mb-2">Photography</span>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Create An LMS Website With LearnPress</h3>
+                    <p class="text-gray-500 text-sm mb-4">By Determined-Poitras</p>
+                    <div class="text-sm text-gray-600 mb-2">2 Weeks • 156 Students</div>
+                    <div class="text-gray-800 font-bold mb-2">Free <span class="line-through text-gray-500">$29.0</span>
+                    </div>
+                    <a href="#" class="text-blue-500 hover:text-blue-600 font-semibold">View More</a>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="./assets/course-6.PNG" alt="Course Image" class="w-full h-50 object-cover">
+                <div class="p-4">
+                    <span
+                        class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide mb-2">Photography</span>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Create An LMS Website With LearnPress</h3>
+                    <p class="text-gray-500 text-sm mb-4">By Determined-Poitras</p>
+                    <div class="text-sm text-gray-600 mb-2">2 Weeks • 156 Students</div>
+                    <div class="text-gray-800 font-bold mb-2">Free <span class="line-through text-gray-500">$29.0</span>
+                    </div>
+                    <a href="#" class="text-blue-500 hover:text-blue-600 font-semibold">View More</a>
+                </div>
+            </div>
+            <!-- More Course Cards as needed -->
+        </div>
+    </section>
+
+    <section
+        class="relative bg-gradient-to-r from-green-100 via-purple-100 to-orange-100 rounded-lg p-8 overflow-hidden ml-8 mr-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <!-- Text Section -->
+            <div class="md:w-1/2">
+                <h3 class="text-gray-700 uppercase font-semibold text-sm mb-2">Get more power from</h3>
+                <h1 class="text-3xl font-bold text-gray-900 mb-4">LearnPress Add-Ons</h1>
+                <p class="text-gray-600 mb-6">The next level of LearnPress - LMS WordPress Plugin. More Powerful,
+                    Flexible and Magical Inside.</p>
+                <a href="#"
+                    class="bg-orange-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-600 transition duration-300">Explore
+                    Course</a>
+            </div>
+
+            <!-- Icon Section -->
+            <div class="relative md:w-1/2 h-64 flex justify-center items-center">
+                <!-- Icon 1 -->
+                <div
+                    class="absolute w-16 h-16 bg-purple-600 text-white rounded-lg shadow-md flex justify-center items-center transform rotate-[15deg] top-10 left-32">
+                    <img src="./assets/instagram.svg" alt="Icon 1">
+                </div>
+                <!-- Icon 2 -->
+                <div
+                    class="absolute w-12 h-12 bg-red-500 text-white rounded-lg shadow-md flex justify-center items-center transform rotate-[-10deg] top-20 left-20">
+                    <img src="./assets/instagram.svg" alt="Icon 2">
+                </div>
+                <!-- Icon 3 -->
+                <div
+                    class="absolute w-14 h-14 bg-blue-500 text-white rounded-lg shadow-md flex justify-center items-center transform rotate-[20deg] top-32 left-40">
+                    <img src="./assets/instagram.svg" alt="Icon 3">
+                </div>
+                <!-- Icon 4 -->
+                <div
+                    class="absolute w-14 h-14 bg-yellow-400 text-white rounded-lg shadow-md flex justify-center items-center transform rotate-[-20deg] top-10 right-20">
+                    <img src="./assets/instagram.svg" alt="Icon 4">
+                </div>
+                <!-- Icon 5 -->
+                <div
+                    class="absolute w-16 h-16 bg-green-500 text-white rounded-lg shadow-md flex justify-center items-center transform rotate-[10deg] top-24 right-32">
+                    <img src="./assets/instagram.svg" alt="Icon 5">
+                </div>
+                <!-- Icon 6 -->
+                <div
+                    class="absolute w-12 h-12 bg-pink-500 text-white rounded-lg shadow-md flex justify-center items-center transform rotate-[-25deg] bottom-10 right-10">
+                    <img src="./assets/instagram.svg" alt="Icon 6">
+                </div>
+                <!-- Icon 7 -->
+                <div
+                    class="absolute w-12 h-12 bg-orange-500 text-white rounded-lg shadow-md flex justify-center items-center transform rotate-[25deg] bottom-10 left-10">
+                    <img src="./assets/instagram.svg" alt="Icon 7">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full py-8 bg-white mx-4 sm:mx-8"> <!-- Use full width and adjust margins -->
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Stat 1 -->
+            <div class="flex flex-col items-center justify-center bg-gray-50 rounded-lg p-6 shadow-md">
+                <h2 class="text-3xl font-bold text-orange-500 mb-2">25K+</h2>
+                <p class="text-gray-600">Active Students</p>
+            </div>
+            <!-- Stat 2 -->
+            <div class="flex flex-col items-center justify-center bg-gray-50 rounded-lg p-6 shadow-md">
+                <h2 class="text-3xl font-bold text-orange-500 mb-2">899</h2>
+                <p class="text-gray-600">Total Courses</p>
+            </div>
+            <!-- Stat 3 -->
+            <div class="flex flex-col items-center justify-center bg-gray-50 rounded-lg p-6 shadow-md">
+                <h2 class="text-3xl font-bold text-orange-500 mb-2">158</h2>
+                <p class="text-gray-600">Instructors</p>
+            </div>
+            <!-- Stat 4 -->
+            <div class="flex flex-col items-center justify-center bg-gray-50 rounded-lg p-6 shadow-md">
+                <h2 class="text-3xl font-bold text-orange-500 mb-2">100%</h2>
+                <p class="text-gray-600">Satisfaction Rate</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="max-w-full mx-8 flex flex-col md:flex-row items-center p-6 bg-white shadow-lg rounded-lg">
+        <!-- Image Section -->
+        <div class="flex-1">
+            <img src="./assets/grow-your-skills.PNG" alt="Learning illustration" class="w-full h-auto">
+        </div>
+
+        <!-- Text Section -->
+        <div class="flex-1 md:ml-8 mt-4 md:mt-0"> <!-- Added mt-4 for top margin on mobile -->
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Grow Us Your Skill With LearnPress LMS</h2>
+            <p class="text-gray-600 mb-6">
+                We denounce with righteous indignation and dislike men who are so beguiled and demoralized that cannot
+                trouble.
+            </p>
+            <ul class="text-gray-700 space-y-2 mb-6">
+                <li class="flex items-center">
+                    <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <path d="M10 15l-5-5h10l-5 5z" />
+                    </svg>
+                    Certification
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <path d="M10 15l-5-5h10l-5 5z" />
+                    </svg>
+                    Certification
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <path d="M10 15l-5-5h10l-5 5z" />
+                    </svg>
+                    Certification
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <path d="M10 15l-5-5h10l-5 5z" />
+                    </svg>
+                    Certification
+                </li>
+            </ul>
+            <a href="#"
+                class="inline-block bg-orange-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-orange-600 transition duration-300">Explore
+                Course</a>
+        </div>
+    </div>
+
+
+    <section class="py-12">
+        <div class="max-w-full mx-8 px-4 text-center">
+            <!-- Section Heading -->
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Student Feedbacks</h2>
+            <p class="text-gray-600 mb-10">What Students Say About Academy LMS</p>
+
+            <!-- Feedback Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Single Card -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-gray-500 text-5xl mb-4">“</div>
+                    <p class="text-gray-700 mb-4">
+                        I must explain to you how all this mistaken. Idea of denouncing pleasure and praising pain was
+                        born and I will give you a complete account of the system and expound.
+                    </p>
+                    <h3 class="font-semibold text-gray-800">Roe Smith</h3>
+                    <p class="text-gray-500">Designer</p>
+                </div>
+                <!-- Repeat for other cards -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-gray-500 text-5xl mb-4">“</div>
+                    <p class="text-gray-700 mb-4">
+                        I must explain to you how all this mistaken. Idea of denouncing pleasure and praising pain was
+                        born and I will give you a complete account of the system and expound.
+                    </p>
+                    <h3 class="font-semibold text-gray-800">Roe Smith</h3>
+                    <p class="text-gray-500">Designer</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-gray-500 text-5xl mb-4">“</div>
+                    <p class="text-gray-700 mb-4">
+                        I must explain to you how all this mistaken. Idea of denouncing pleasure and praising pain was
+                        born and I will give you a complete account of the system and expound.
+                    </p>
+                    <h3 class="font-semibold text-gray-800">Roe Smith</h3>
+                    <p class="text-gray-500">Designer</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-gray-500 text-5xl mb-4">“</div>
+                    <p class="text-gray-700 mb-4">
+                        I must explain to you how all this mistaken. Idea of denouncing pleasure and praising pain was
+                        born and I will give you a complete account of the system and expound.
+                    </p>
+                    <h3 class="font-semibold text-gray-800">Roe Smith</h3>
+                    <p class="text-gray-500">Designer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12">
+        <div class="max-w-full mx-8 px-4">
+            <!-- Section Heading -->
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Latest Notices</h2>
+            <p class="text-gray-600 mb-6">Stay updated with the latest announcements and notices.</p>
+
+            <!-- Notice List -->
+            <div class="space-y-4">
+                <!-- Single Notice -->
+                <div
+                    class="p-4 bg-white rounded-lg shadow-md flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div class="mb-2 md:mb-0">
+                        <h3 class="text-lg font-semibold text-gray-800">Semester Exam Schedule Released</h3>
+                        <p class="text-gray-600">The exam schedule for the upcoming semester has been released. Please
+                            check the details.</p>
+                    </div>
+                    <div class="text-gray-500 text-sm flex flex-col md:flex-row md:items-center">
+                        <span>Posted on: October 10, 2024</span>
+                        <a href="#" class="mt-2 md:mt-0 md:ml-4 text-blue-600 hover:underline">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Additional Notices -->
+                <div
+                    class="p-4 bg-white rounded-lg shadow-md flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div class="mb-2 md:mb-0">
+                        <h3 class="text-lg font-semibold text-gray-800">New Library Timings</h3>
+                        <p class="text-gray-600">The library timings have been updated for the winter semester.</p>
+                    </div>
+                    <div class="text-gray-500 text-sm flex flex-col md:flex-row md:items-center">
+                        <span>Posted on: October 5, 2024</span>
+                        <a href="#" class="mt-2 md:mt-0 md:ml-4 text-blue-600 hover:underline">Read More</a>
+                    </div>
+                </div>
+
+                <div
+                    class="p-4 bg-white rounded-lg shadow-md flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div class="mb-2 md:mb-0">
+                        <h3 class="text-lg font-semibold text-gray-800">Holiday Announcement</h3>
+                        <p class="text-gray-600">The institute will remain closed on account of a public holiday next
+                            week.</p>
+                    </div>
+                    <div class="text-gray-500 text-sm flex flex-col md:flex-row md:items-center">
+                        <span>Posted on: September 28, 2024</span>
+                        <a href="#" class="mt-2 md:mt-0 md:ml-4 text-blue-600 hover:underline">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-gray-100 py-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Footer Content -->
+            <div class="flex flex-wrap justify-between">
+                <!-- Brand Section -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800">EduPress</h2>
+                    <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+
+                <!-- Get Help Section -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Get Help</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><a href="#" class="hover:text-orange-500">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-orange-500">Latest Articles</a></li>
+                        <li><a href="#" class="hover:text-orange-500">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Programs Section -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Programs</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><a href="#" class="hover:text-orange-500">Art & Design</a></li>
+                        <li><a href="#" class="hover:text-orange-500 text-orange-500">Business</a></li>
+                        <li><a href="#" class="hover:text-orange-500">IT & Software</a></li>
+                        <li><a href="#" class="hover:text-orange-500">Languages</a></li>
+                        <li><a href="#" class="hover:text-orange-500">Programming</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Us Section -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Contact Us</h3>
+                    <p class="text-gray-600">Address: 2321 New Design Str, Lorem Ipsum10 Hudson Yards, USA</p>
+                    <p class="text-gray-600 mt-2">Tel: +1 (123) 2500-567-8988</p>
+                    <p class="text-gray-600 mt-2">Mail: supportlms@gmail.com</p>
+                    <!-- Social Icons -->
+                    <div class="flex space-x-3 mt-4 text-gray-600">
+                        <a href="#" class="hover:text-orange-500"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-orange-500"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="hover:text-orange-500"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-orange-500"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="mt-10 text-center text-gray-500 text-sm">
+                <p>Copyright © 2024 LearnPress LMS | Powered by ThimPress</p>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <a href="#"
+            class="fixed bottom-6 right-6 bg-black text-white p-2 rounded-full shadow-lg hover:bg-gray-800 transition duration-300">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </footer>
+
+
+
+
+    <script>
+
+        document.getElementById('close-notice').addEventListener('click', function () {
+            document.getElementById('notice-bar').style.display = 'none';
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+
+    </script>
+</body>
+
+</html>

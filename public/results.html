@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./output.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+    :root {
+      --theme: rgb(255, 120, 45);
+    }
+
+    * {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      flex: 1; /* This allows the container to grow */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px; /* Added gap for spacing */
+      padding: 4rem;
+    }
+
+    footer {
+      margin-top: auto; /* Pushes footer to the bottom */
+    }
+
+    .try-examples{
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="Navbar bg-white shadow-lg">
+    <div class="navbar-container flex justify-between p-4 items-center ">
+      <span><img class="h-6" src="/assets/logo.PNG" alt="Logo"></span>
+      <ul class="hidden md:flex gap-7 items-center">
+        <li class="hover:text-[rgb(255,120,45)] hover:font-bold"><a href="./home.html">Home</a></li>
+        <li class="hover:text-[rgb(255,120,45)] hover:font-bold"><a href="#">Courses</a></li>
+        <li class="hover:text-[rgb(255,120,45)] hover:font-bold"><a href="#">Results</a></li>
+        <li class="hover:text-[rgb(255,120,45)] hover:font-bold"><a href="#">Faculty</a></li>
+        <li class="hover:text-[rgb(255,120,45)] hover:font-bold"><a href="#">About</a></li>
+        <li class="hover:text-[rgb(255,120,45)] hover:font-bold">
+          <button class="bg-[rgb(255,120,45)] p-3 rounded-[5px] text-white font-bold hover:bg-[rgb(247,131,68)]">
+            <a href="#">Contact Us</a>
+          </button>
+        </li>
+      </ul>
+
+      <!-- Mobile Menu -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg p-4">
+      <ul class="flex flex-col gap-4">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Results</a></li>
+        <li><a href="#">Faculty</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mx-auto">
+    <h1 class="text-3xl">Test Series Result</h1>
+    <center>
+      <p>Check your progress what you learned in your class.</p>
+    </center>
+    <center>
+      <div class="input-btn">
+        <input id="rollNumber" class="border p-3" type="text" placeholder="Enter Roll Number" />
+        <button id="fetchResultBtn" class="bg-[rgb(255,120,45)] p-3 rounded-[5px] text-white font-bold hover:bg-[rgb(247,131,68)]">Check Result</button>
+       
+      </div>
+      <span class="try-examples">try examples: 1,2,3,4,5,6.....etc</span>
+    </center>
+    <div id="resultContainer" class="mt-5 w-full"></div>
+  </div>
+
+  <footer class="bg-gray-100 py-10">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-wrap justify-between">
+        <div class="w-full sm:w-1/2 lg:w-1/4 mb-6">
+          <h2 class="text-2xl font-bold text-gray-800">EduPress</h2>
+          <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+
+        <div class="w-full sm:w-1/2 lg:w-1/4 mb-6">
+          <h3 class="text-lg font-semibold text-gray-800 mb-3">Get Help</h3>
+          <ul class="text-gray-600 space-y-2">
+            <li><a href="#" class="hover:text-orange-500">Contact Us</a></li>
+            <li><a href="#" class="hover:text-orange-500">Latest Articles</a></li>
+            <li><a href="#" class="hover:text-orange-500">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="w-full sm:w-1/2 lg:w-1/4 mb-6">
+          <h3 class="text-lg font-semibold text-gray-800 mb-3">Programs</h3>
+          <ul class="text-gray-600 space-y-2">
+            <li><a href="#" class="hover:text-orange-500">Art & Design</a></li>
+            <li><a href="#" class="hover:text-orange-500 text-orange-500">Business</a></li>
+            <li><a href="#" class="hover:text-orange-500">IT & Software</a></li>
+            <li><a href="#" class="hover:text-orange-500">Languages</a></li>
+            <li><a href="#" class="hover:text-orange-500">Programming</a></li>
+          </ul>
+        </div>
+
+        <div class="w-full sm:w-1/2 lg:w-1/4 mb-6">
+          <h3 class="text-lg font-semibold text-gray-800 mb-3">Contact Us</h3>
+          <p class="text-gray-600">Address: 2321 New Design Str, Lorem Ipsum10 Hudson Yards, USA</p>
+          <p class="text-gray-600 mt-2">Tel: +1 (123) 2500-567-8988</p>
+          <p class="text-gray-600 mt-2">Mail: supportlms@gmail.com</p>
+          <div class="flex space-x-3 mt-4 text-gray-600">
+            <a href="#" class="hover:text-orange-500"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-orange-500"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" class="hover:text-orange-500"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-orange-500"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 text-center text-gray-500 text-sm">
+        <p>Copyright © 2024 LearnPress LMS | Powered by ThimPress</p>
+      </div>
+    </div>
+
+    <a href="#" class="fixed bottom-6 right-6 bg-black text-white p-2 rounded-full shadow-lg hover:bg-gray-800 transition duration-300">
+      <i class="fas fa-arrow-up "></i>
+    </a>
+  </footer>
+
+  <script>
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.getElementById('fetchResultBtn').addEventListener('click', async function () {
+      const rollNumber = document.getElementById('rollNumber').value;
+
+      // Fetch result from backend
+      const response = await fetch(`/api/results/${rollNumber}`);
+      const data = await response.json();
+
+      // Display result
+      const resultContainer = document.getElementById('resultContainer');
+      if (response.ok) {
+        resultContainer.innerHTML = `
+     <h2 class="text-2xl font-bold mb-4 text-center">Result for ${data.name}</h2>
+<div class="flex justify-center overflow-x-auto">
+    <table class="min-w-full bg-white border border-gray-300">
+        <thead>
+            <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                <th class="py-3 px-6 text-left">Detail</th>
+                <th class="py-3 px-6 text-left">Score</th>
+            </tr>
+        </thead>
+        <tbody class="text-gray-600 text-sm font-light">
+            <tr class="border-b border-gray-300 hover:bg-gray-100">
+                <td class="py-3 px-6">Roll Number:</td>
+                <td class="py-3 px-6">${data.roll_number}</td>
+            </tr>
+            <tr class="border-b border-gray-300 hover:bg-gray-100">
+                <td class="py-3 px-6">Class:</td>
+                <td class="py-3 px-6">${data.class}</td>
+            </tr>
+            <tr class="border-b border-gray-300 hover:bg-gray-100">
+                <td class="py-3 px-6">Math:</td>
+                <td class="py-3 px-6">${data.math}</td>
+            </tr>
+            <tr class="border-b border-gray-300 hover:bg-gray-100">
+                <td class="py-3 px-6">Science:</td>
+                <td class="py-3 px-6">${data.science}</td>
+            </tr>
+            <tr class="border-b border-gray-300 hover:bg-gray-100">
+                <td class="py-3 px-6">English:</td>
+                <td class="py-3 px-6">${data.english}</td>
+            </tr>
+            <tr class="border-b border-gray-300 hover:bg-gray-100 font-bold">
+                <td class="py-3 px-6">Total:</td>
+                <td class="py-3 px-6">${data.total}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+    `;
+      } else {
+        resultContainer.innerHTML = `<p class="text-center">${data.message}</p>`;
+      }
+    });
+
+  </script>
+</body>
+
+</html>
